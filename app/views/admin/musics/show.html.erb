@@ -1,0 +1,4 @@
+<%= @music.name %>
+<%= @music.comment %>
+<%= attachment_image_tag @music, :image, size: "300x300" %>
+<%= audio_tag(@music.listening, :autoplay => false, :controls => true) %>

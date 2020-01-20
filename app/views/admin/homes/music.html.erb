@@ -1,0 +1,31 @@
+<%= link_to 'New Discography', new_admin_disc_path,class: "btn btn-lg, btn-primary" %>
+<%= link_to 'New music', new_admin_music_path,class: "btn btn-lg, btn-primary" %>
+<div class="col-md-9 col-md-offset-1">
+				<div class="row clearfix">
+					<h2 class="new-items">discography</h2>
+						<% @disc.each do |disc| %>
+							<div class="example">
+								<div class="example_image">
+									<%= link_to admin_disc_path(disc) do %>
+									<%= attachment_image_tag disc, :image, size: "300x300" %>
+									<% end %>
+							    </div>
+					    <% end %>
+					</div>
+				</div>
+			</div>
+	<div class="row clearfix">
+					<h2 class="new-items">music</h2>
+						<% @music.each do |music| %>
+							<div class="example">
+								<%= music.name %>
+								<div class="example_image">
+									<%= link_to admin_music_path(music) do %>
+									<%= attachment_image_tag music, :image, size: "300x300" %>
+									<% end %>
+								</div>
+								<%= audio_tag(music.listening, :autoplay => false, :controls => true) %>
+								<%= music.comment %>
+					    <% end %>
+					</div>
+				</div>

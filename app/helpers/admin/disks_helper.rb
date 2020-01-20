@@ -1,0 +1,2 @@
+module Admin::DisksHelper
+end

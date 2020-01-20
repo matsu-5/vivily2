@@ -1,0 +1,27 @@
+<%= link_to 'New Video', new_admin_video_path,class: "btn btn-lg, btn-primary" %>
+<%= link_to 'New movie', new_admin_movie_path,class: "btn btn-lg, btn-primary" %>
+
+<div class="col-md-9 col-md-offset-1">
+	<div class="row clearfix">
+		<h2 class="new-items">Video</h2>
+            <% @video.each do |video| %>
+            <div class="example_image">
+            	<%= link_to admin_video_path(video) do %>
+			  <%= attachment_image_tag video, :image, size: "300x300" %>
+			  <% end %>
+			</div>
+			<%= video.title %>
+            <% end %>
+        </div>
+            <div class="row clearfix">
+            	<h2 class="new-items">Movie</h2>
+            <% @movie.each do |movie| %>
+            <div class="example_image">
+            	<%= link_to admin_movie_path(movie) do %>
+			  <%= attachment_image_tag movie, :image, size: "300x300" %>
+			  <% end %>
+			</div>
+			<%= movie.title %>
+            <% end %>
+        </div>
+    </div>

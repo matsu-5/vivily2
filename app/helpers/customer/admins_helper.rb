@@ -1,0 +1,2 @@
+module Customer::AdminsHelper
+end

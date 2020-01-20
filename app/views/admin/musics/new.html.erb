@@ -1,0 +1,21 @@
+<section class="container clearfix">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 new-container">
+			<h1 class="text-center">New Music</h1>
+			<hr>
+			<div class="row">
+				<%= form_for @music,:url => {:action => :create} do |f|%>
+						<%= f.label :シングルアルバム名 %><br>
+						  <%= f.text_field :name, class:"form-control", placeholder: "シングル/アルバム名" %>
+						<b>画像</b>
+						<%= f.attachment_field :image %>
+						<b>音楽</b>
+						<%= f.file_field :listening %>
+						<b>vivilyコメント</b>
+					<%= f.text_field :comment, class:"form-control", placeholder: "vivilyコメント" %>
+					<%= f.submit "保存", class:"btn btn-lg btn-block btn-base-1 mt-20 bg-primary" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</section>

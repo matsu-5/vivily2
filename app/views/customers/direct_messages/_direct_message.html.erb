@@ -1,0 +1,27 @@
+<p class="<%= direct_message.id %>" style= "color: white; margin-top: 0;">
+	<!--%= attachment_image_tag direct_message.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %-->
+	<%= direct_message.customer.first_name %>
+</p>
+<p class="<%= direct_message.id %>">
+	<span class="balloon1-top">
+		<%= direct_message.message %><br>
+		<h7 style="color: #C0C0C0;"><%= direct_message.created_at.strftime("%Y-%m-%d %H:%M") %></h7>
+	</span>
+</p><br>
+
+<script>
+	var direct_message = <%= direct_message.customer.id %>;
+	// console.log(direct_message);
+	// var current_user_id = $('.dm_user').data('id');
+	var dm_customer = document.getElementById('current_customer');
+	// console.log(dm_user.getAttribute('data-id'));
+	// var dm_user = document.getElementsByClassName('current_user')
+	console.log(dm_customer)
+	// var current_user = dm_user.getAttribute('data-id');
+	var current_customer = dm_customer.getAttribute('data-id')
+	if(direct_message == current_customer){
+	  $('p.' + <%= direct_message.id %>).css('text-align', 'right');
+	}else{
+	  $('p.' + <%= direct_message.id %>).css('text-align', 'left');
+	}
+</script>

@@ -1,0 +1,33 @@
+<section class="container clearfix">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 new-container">
+			<h1 class="text-center">New Disc</h1>
+			<hr>
+			<div class="row">
+				<%= form_for(@disc, url: admin_discs_path) do |f| %>
+						<%= f.label :シングルアルバム名 %><br>
+						  <%= f.text_field :name, class:"form-control", placeholder: "シングル/アルバム名" %>
+						<%= f.label :CDTYPE %><br>
+						  <%= f.text_field :category, class:"form-control", placeholder: "CDTYPE" %>
+						<%= f.label :価格 %><br>
+						<div class="row">
+							<div class="col-md-6">
+								<%= f.number_field :price,min: 1, class:"form-control", placeholder: "1000" %>
+							</div>
+						</div>
+						<%= f.label :発売日 %>
+						<%= f.date_field :release_date, class:"form-control", placeholder: "2020/12/27" %>
+						<b>画像</b>
+						<%= f.attachment_field :image %>
+					<%= f.fields_for :disks do |disk| %>
+						<%= render 'disk_fields', f: disk %>
+					<% end %>
+					<div id="links">
+					  <%= link_to_add_association 'ディスク追加',f, :disks %>
+					  </div>
+					<%= f.submit "保存", class:"btn btn-lg btn-block btn-base-1 mt-20 bg-primary" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</section>

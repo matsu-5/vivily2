@@ -1,0 +1,15 @@
+<%= @disc.name %>
+<%= @disc.category %>
+<%= @disc.price %>
+<%= @disc.release_date %>
+<%= attachment_image_tag @disc, :image %>
+
+                        <div class ="disk">
+							<% @disc.disks.each do |disk| %>
+								<p>ディスク<%= disk.disk_order %><br>
+									<% disk.songs.each do |song| %>
+										<p><%= song.song_order %>.<%= song.name %></p>
+									<% end %>
+								</p>
+							<% end %>
+						</div>

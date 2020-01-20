@@ -1,0 +1,3 @@
+
+<%= @movie.title %>
+<%= video_tag @movie.movie.to_s, loop: false, controls: true, :playsinline => 'false', autoplay: true, size: "300×150", class: "content embed-responsive-video" %>

@@ -1,0 +1,42 @@
+<div class="tbody" style="width:100%; height: 700px;">
+
+<div class="panel-body" ng-transclude>
+  <div include-with-scope=""class="ng-scope">
+<table>
+	<div class="col-md-12">
+	  <div ba-panel ba-panel-title="顧客一覧"ba-panel-class="with-scroll">
+          <div class="panel-heading clearfix">
+          	<h3 class="panel-title">顧客一覧</h3>
+	  </div>
+	</div>
+	  <div class="table table-bordered table-hover table-condensed">
+	  </div>
+	</div>
+      <div class="table-responsive">
+      	<table class="table table-striped jambo_table buik_action">
+      	<thead>
+		<tr class="headings">
+			<th class="column-title">顧客名</th>
+			<th class="column-title">メールアドレス</th>
+			<th class="column-title">詳細ページへ</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @customers.each do |customer| %>
+			<tr class="even pointer">
+				<td class=><%= customer.last_name %>
+				<%= customer.first_name %></td>
+				<td><%= customer.email %></td>
+				<td><%= link_to "顧客詳細へ", admin_customer_path(customer) %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+</div>
+<div class="text-center">
+<%= paginate @customer, class: "paginate"%>
+</div>
+</table>
+</div>
+</div>
+</div>

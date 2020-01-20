@@ -1,0 +1,2 @@
+module Customer::MusicsHelper
+end

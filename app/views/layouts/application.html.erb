@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>vivily</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <script src="https://kit.fontawesome.com/0a9fd1077e.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+
+</head>
+
+<body>
+  <header class="navbar nav-head", style="padding: 0 50px; margin-bottom: 0px;">
+  <% if admin_signed_in? %>
+    <nav class="nav navbar-nav navbar-left">
+      <a href="/admin" class="btn-circle-fishy">vivily</a>
+    </nav>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to 'user', admin_customers_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+        </li>
+        <li>
+          <%= link_to 'information/topic', admin_homes_topic_path, class: "btn-default", style: "margin-left: 20px; margin-top: 33px;"%>
+        </li>
+        <li>
+          <%= link_to 'live', admin_homes_live_path, class: "btn-default", style: "margin-left: 20px; margin-top: 33px;"%>
+        </li>
+        <li>
+          <%= link_to 'discography/music', admin_homes_music_path, class: "btn-default", style: "margin-left: 20px; margin-top: 33px;" %>
+        </li>
+        <li>
+          <%= link_to 'movie', admin_homes_movie_path, class: "btn-default", style: "margin-left: 20px; margin-top: 33px;"%>
+        </li>
+        <li>
+          <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: "btn-default", style: "margin-left: 20px; margin-top: 33px;" %>
+        </li>
+      </ul>
+    </nav>
+    <p class="navbar-text navbar-right">
+    </p>
+  <% elsif customer_signed_in? %>
+    <nav class="nav navbar-nav navbar-left">
+      <a href="/" class="btn-circle-fishy">Jacketby</a>
+    </nav>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to 'マイページ', edit_customers_customer_path(current_customer.id), class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+        </li>
+        <li>
+          <%= link_to 'about', customers_homes_about_path, class: "btn-default", style: "margin-left: 20px; margin-top: 33px;" %>
+        </li>
+        <li>
+          <%= link_to 'topic', customers_topics_path(current_customer.id), class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+        </li>
+        <li>
+          <%= link_to 'movie', customers_movies_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+        </li>
+        <li>
+        <%= link_to "music", customers_musics_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+        </li>
+        <li>
+          <%= link_to 'ログアウト', destroy_customer_session_path, method: :delete, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+        </li>
+        <p class="navbar-text navbar-right">
+        ようこそ　<%= current_customer.last_name %><%= current_customer.first_name %>さん。
+        </p>
+      </ul>
+    </nav>
+ <% else %>
+    <nav class="nav navbar-nav navbar-left">
+      <a href="/" class="btn-circle-fishy">Jacketby</a>
+    </nav>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to "news", customers_informations_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+        </li>
+        <li>
+          <%=link_to "live", customers_lives_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+        </li>
+        <li>
+          <%= link_to "about", customers_homes_about_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+        </li>
+        <li>
+          <%= link_to "discography", customers_discs_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+        </li>
+        <li>
+          <%= link_to "video", customers_videos_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+        </li>
+        <li>
+          <%= link_to "crew sign_in", new_customer_registration_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+        </li>
+        <li>
+          <%= link_to "crew sign_up", new_customer_session_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+        </li>
+        </br>
+        <p class="navbar-text navbar-right">
+          ようこそ　ゲストさん。
+        </p>
+      </ul>
+    </nav>
+  <% end %>
+  </header>
+<%= yield %>
+<footer class="footer navbar-inverse", style="height: 80px; line-height: 80px; font-size: 20px;">
+  <div class="container">
+    <p class="nav navbar-nav navbar-right", style="color:white">© All rights reserved by vivily.Inc.</p>
+  </div>
+</footer>
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</body>
+
+</html>
+

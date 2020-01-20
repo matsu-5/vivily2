@@ -1,0 +1,2 @@
+module Customer::CustomerRoomsHelper
+end
