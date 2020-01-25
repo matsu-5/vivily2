@@ -9,6 +9,7 @@ class Admin::DiscsController < ApplicationController
   end
 
   def edit
+    @disc = Disc.find(params[:id])
   end
 
   def show
@@ -25,9 +26,19 @@ class Admin::DiscsController < ApplicationController
  end
 
   def update
+    @disc = Disc.find(params[:id])
+    if @disc.update(disc_params)
+        redirect_to admin_disc_path
+    else
+        render :edit
+    end
+    flash[:success] = 'Wear was successfully updated.'
   end
 
-  def hide
+  def destroy
+      disc = Disc.find(params[:id])
+      disc.destroy
+      redirect_to admin_homes_music_path
   end
 
   private

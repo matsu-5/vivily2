@@ -21,7 +21,7 @@ class Admin::HomesController < ApplicationController
     @discs = Disc.where(category_id: @category.id)
     @categories = Category.all
   end
-  
+
   def destroy
     category = Category.find(params[:id])
     category.destroy
@@ -30,5 +30,8 @@ class Admin::HomesController < ApplicationController
 
   def live
     @live = Live.all
+  end
+
+  def top_second
   end
 end

@@ -1,6 +1,6 @@
 <p class="<%= direct_message.id %>" style= "color: white; margin-top: 0;">
 	<!--%= attachment_image_tag direct_message.user, :profile_image, fallback: "no_image.jpg", class:"profile-img-circle", size: "40x40" %-->
-	<%= direct_message.customer.first_name %>
+	<%= direct_message.customer.first_name %><%= direct_message.customer.last_name %>
 </p>
 <p class="<%= direct_message.id %>">
 	<span class="balloon1-top">

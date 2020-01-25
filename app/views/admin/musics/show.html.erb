@@ -16,3 +16,5 @@
        </div>
     </div>
 </div>
+<%= link_to "Edit", edit_admin_music_path(@music), class:"btn-sm btn-dark"%>
+<%= link_to "Destroy", admin_music_path(@music),class:"btn-sm btn-danger", method: :delete, "data-confirm" => "Are you sure?" %>

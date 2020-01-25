@@ -1,0 +1,8 @@
+<%= form_with(model: [music, comment],url:customers_music_comments_path(@music),method: :post,remote: true ) do |form| %>
+  <div>
+    <%= form.text_area :comment_content %>
+  </div>
+  <div class="actions">
+    <%= form.submit "コメントをする" %>
+  </div>
+<% end %>

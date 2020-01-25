@@ -1,13 +1,14 @@
+<div class="top_image">
+  <div class="content">
+
 <%= link_to 'New Discography', new_admin_disc_path,class: "btn btn-lg, btn-primary new-button" %>
 <% @categories.each do |category| %>
 	<%= link_to "/admin/category/#{category.id}" do %>
 				 			<h3 style="color: black; font-size: 15px; "><%= category.name %>(<%= category.discs.count %>)</h3>
 				 		 <% end %>
 				 		 <% end %>
-					</div>
-
-  <div class="container">
-	<div class="row">
+    <div class="container">
+	  <div class="row">
 		<div class="col-md-9 col-md-offset-0">
 	       <h2 class="new-discs">discography</h2>
 		   <% @disc.each do |disc| %>
@@ -54,14 +55,15 @@
           <%= f.text_field :name, class:"form-control", placeholder: "name" %><br>
           <%= f.submit "create", class:"btn btn-dark" %>
         <% end %>
-      </div>
     </div>
-  </div>
+</div>
 
 <% @categories.each do |category| %>
 <%= category.name%>
 <%= link_to "Destroy", admin_category_path(category),class:"btn-sm btn-danger", method: :delete, "data-confirm" => "Are you sure?" %>
 <% end %>
+</div>
+</div>
 
 
 

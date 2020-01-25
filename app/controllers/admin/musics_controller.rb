@@ -4,6 +4,7 @@ class Admin::MusicsController < ApplicationController
   end
 
   def edit
+    @music = Music.find(params[:id])
   end
 
   def show
@@ -20,9 +21,19 @@ class Admin::MusicsController < ApplicationController
   end
 
   def update
+    @music = Music.find(params[:id])
+    if @music.update(music_params)
+        redirect_to admin_music_path
+    else
+        render :edit
+    end
+    flash[:success] = 'Wear was successfully updated.'
   end
 
-  def hide
+  def destroy
+      music = Music.find(params[:id])
+      music.destroy
+      redirect_to admin_homes_music_path
   end
 
   private

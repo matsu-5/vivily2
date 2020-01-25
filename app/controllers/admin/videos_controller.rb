@@ -4,6 +4,7 @@ class Admin::VideosController < ApplicationController
   end
 
   def edit
+    @video = Video.find(params[:id])
   end
 
   def show
@@ -20,6 +21,13 @@ class Admin::VideosController < ApplicationController
 end
 
   def update
+    @video = Video.find(params[:id])
+    if @video.update(video_params)
+        redirect_to admin_video_path
+    else
+        render :edit
+    end
+    flash[:success] = 'Wear was successfully updated.'
   end
 
   def destroy

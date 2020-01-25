@@ -1,2 +1,22 @@
-<h1>Customer::Topics#index</h1>
-<p>Find me in app/views/customer/topics/index.html.erb</p>
+<div class="top_image">
+  <div class="content">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-9 col-md-offset-0">
+          <h1 class="new-topic">topic</h1>
+            <% @topics.each do |topic| %>
+              <div class="example">
+                  <p><%= topic.created_at.strftime('%Y/%m/%d') %></p><br>
+              <button type="button" class="btn btn-light">
+                <%= link_to customers_topic_path(topic) do %>
+                <%= topic.title %>
+                <% end %>
+              </button>
+               </div>
+                <hr>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

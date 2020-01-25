@@ -1,0 +1,9 @@
+<% comments.each do |comment| %>
+  <% unless comment.id.nil? %>
+    <p><%= link_to "#{comment.customer.first_name}さん", customer_path(comment.customer.id) %></p>
+    <p>コメント：<%= comment.content %></p>
+    <% if comment.customer == current_customer %>
+      <p><%= link_to 'コメントを削除する', customers_music_comment_path(comment.music_id, comment.id), method: :delete, remote: true %></p>
+    <% end %>
+  <% end %>
+<% end %>

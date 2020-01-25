@@ -49,5 +49,7 @@
 									<% end %>
 								</p>
 							<% end %>
+							<%= link_to "Edit", edit_admin_disc_path(@disc), class:"btn-sm btn-dark"%>
+							<%= link_to "Destroy", admin_disc_path(@disc),class:"btn-sm btn-danger", method: :delete, "data-confirm" => "Are you sure?" %>
 						</div>
 					</div>

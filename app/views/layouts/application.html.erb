@@ -5,8 +5,9 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
+  <link href="https://fonts.googleapis.com/css?family=Slackey&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <script src="https://kit.fontawesome.com/0a9fd1077e.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -22,43 +23,57 @@
 
 <body>
    <% if admin_signed_in? %>
-   <div class= "head_image">
+  <div class= "head_image">
+    <%= link_to customers_homes_top_second_path do %>
+    <div class="logo_image"></div>
+    <% end %>
   </div>
+  <div class ="header">
     <header class="navbar">
-    <nav class="navbar-left">
-      <a href="admin/homes/topic" class="btn-circle-fishy">vivily</a>
-    </nav>
     <nav>
-      <ul class="float-right">
-        <li>
-          <%= link_to 'User', admin_customers_path, class: "btn-default" %>
-        </li>
-        <li>
-          <%= link_to 'Information/topic', admin_homes_topic_path, class: "btn-default" %>
-        </li>
-        <li>
-          <%= link_to 'Live', admin_homes_live_path, class: "btn-default" %>
-        </li>
-        <li>
-          <%= link_to 'Discography/Music', admin_homes_music_path, class: "btn-default" %>
-        </li>
-        <li>
-          <%= link_to 'Movie', admin_homes_movie_path, class: "btn-default" %>
-        </li>
-        <li>
-          <%= link_to 'Log Out', destroy_admin_session_path, method: :delete, class: "btn-default" %>
-        </li>
-    </nav>
+        <ul class="float-right">
+          <li>
+            <%= link_to 'User', admin_customers_path, class: "btn-default" %>
+          </li>
+          <li>
+            <%= link_to 'Information/topic', admin_homes_topic_path, class: "btn-default" %>
+          </li>
+          <li>
+            <%= link_to 'Live', admin_homes_live_path, class: "btn-default" %>
+          </li>
+          <li>
+            <%= link_to 'Discography/Music', admin_homes_music_path, class: "btn-default" %>
+          </li>
+          <li>
+            <%= link_to 'Movie', admin_homes_movie_path, class: "btn-default" %>
+          </li>
+          <li>
+            <%= link_to 'Log Out', destroy_admin_session_path, method: :delete, class: "btn-default" %>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </div>
     <p class="navbar-text navbar-right">
     </p>
   <% elsif customer_signed_in? %>
-    <nav class="navbar-left">
-      <a href="/customers/topics" class="btn-circle-fishy">vivily</a>
-    </nav>
+  <div class= "head_image">
+    <%= link_to customers_homes_top_third_path do %>
+    <div class="logo_image"></div>
+    <% end %>
+  </div>
+  <div class ="header">
+    <header class="navbar">
     <nav>
       <ul class="float-right">
         <li>
           <%= link_to 'My Page', edit_customers_customer_path(current_customer.id), class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+        </li>
+        <li>
+          <%= link_to 'Chat', customers_customers_path(current_customer.id), class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+        </li>
+        <li>
+          <%= link_to 'Room', customers_rooms_path(current_customer.id), class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
         </li>
         <li>
           <%= link_to 'About', customers_homes_about_path, class: "btn-default", style: "margin-left: 20px; margin-top: 33px;" %>
@@ -76,16 +91,20 @@
           <%= link_to 'Log Out', destroy_customer_session_path, method: :delete, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
         </li>
         <p class="navbar-text navbar-right">
-        ようこそ　<%= current_customer.last_name %><%= current_customer.first_name %>さん。
+        Welcome!　Mr.<%= current_customer.last_name %><%= current_customer.first_name %>
         </p>
       </ul>
     </nav>
+  </header>
+</div>
  <% else %>
  <div class= "head_image">
+  <%= link_to customers_homes_top_second_path do %>
+    <div class="logo_image"></div>
+    <% end %>
   </div>
-    <nav class="navbar-left">
-      <a href="/customers/informations" class="btn-circle-fishy">vivily</a>
-    </nav>
+  <div class ="header">
+    <header class="navbar">
     <nav>
       <ul class="float-right">
         <li>
@@ -104,17 +123,16 @@
           <%= link_to "Video", customers_videos_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
         </li>
         <li>
-          <%= link_to "Crew Sign In", new_customer_registration_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+          <%= link_to "Crew Sign Up", new_customer_registration_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
         </li>
         <li>
-          <%= link_to "Crew Sign_Up", new_customer_session_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+          <%= link_to "Crew Sign In", new_customer_session_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
         </li>
         </br>
-        <p class="navbar-text navbar-right">
-          ようこそ　ゲストさん。
-        </p>
       </ul>
     </nav>
+  </header>
+</div>
   <% end %>
   </header>
 <%= yield %>
@@ -123,13 +141,13 @@
     <nav class="navbar">
       <ul>
         <li>
-          <a href="https://twitter.com/vivily_official" class="fab fa-twitter-square fa-3x"></a>
+          <a href="https://twitter.com/vivily_official" class="fab fa-twitter-square fa-2x"></a>
         </li>
         <li>
-          <a href="https://www.instagram.com/vivily_official/" class="fab fa-instagram fa-3x"></a>
+          <a href="https://www.instagram.com/vivily_official/" class="fab fa-instagram fa-2x"></a>
         </li>
         <li>
-          <a href="https://www.youtube.com/channel/UC0XjBsw1SuJhie-QHks3U6A" class="fab fa-youtube-square fa-3x"></a>
+          <a href="https://www.youtube.com/channel/UC0XjBsw1SuJhie-QHks3U6A" class="fab fa-youtube-square fa-2x"></a>
         </li>
       </ul>
     </nav>

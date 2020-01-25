@@ -73,6 +73,7 @@ gem 'kaminari','~> 1.1.1'
 gem 'carrierwave'
 gem 'carrierwave-audio'
 gem 'summernote-rails', '~> 0.8.12.0'
+gem 'data-confirm-modal'
 
 group :production do
   gem 'mysql2'

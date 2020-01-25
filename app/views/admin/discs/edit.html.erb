@@ -1,0 +1,52 @@
+<div class="show-content">
+	<section class="container-fluid clearfix">
+		<h1 class="text-center">Disk　Detail</h1>
+			<div class="row">
+				<%= form_for(@disc, url: admin_disc_path) do |f| %>
+				<div class="col-md-8 col-sm-offset-2 show-container">
+					<div class="row clearfix">
+						<div class="col-md-6">
+							<div class="item_show">
+								<div class="item_show_image">
+									<%= attachment_image_tag @disc, :image, size: "300x300", class: "center-block" %>
+									<%= f.attachment_field :image %>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th>シングルアルバム名</th>
+										<th><%= f.text_field :name, class:"form-control", placeholder: "シングル/アルバム名" %></th>
+									</tr>
+									<tr>
+										<th>カテゴリー名</th>
+										<th><%= f.collection_select :category_id, Category.all, :id, :name, {include_blank: "カテゴリー"} %></th>
+									</tr>
+									<tr>
+										<th>価格</th>
+										<th><%= f.number_field :price,min: 1, class:"form-control", placeholder: "1000" %>
+										</th>
+									</tr>
+									<tr>
+										<th>発売日</th>
+										<th><%= f.date_field :release_date, class:"form-control", placeholder: "2020/12/27" %></th>
+								</thead>
+							</table>
+			        		<hr>
+			        	</div>
+			        </div>
+
+						<div class="row">
+							<%= f.fields_for :disks do |disk| %>
+								<%= render 'disk_fields', f: disk %>
+							<% end %>
+							<div id="links">
+							  <%= link_to_add_association 'ディスク追加',f, :disks %>
+							</div>
+							<%= f.submit "保存",method: :PATCH, class:"btn btn-lg btn-block btn-base-1 mt-20 bg-primary" %>
+				<% end %>
+						</div>
+							<hr>

@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
 
   namespace :admin do
+    get 'blogs/index'
+    get 'blogs/show'
+    get 'blogs/new'
+    get 'blogs/edit'
+  end
+  namespace :customer do
+    get 'blogs/show'
+    get 'blogs/index'
+  end
+  namespace :admin do
     get 'categories/create'
     get 'categories/update'
     get 'categories/hide'
@@ -52,15 +62,19 @@ Rails.application.routes.draw do
   end
   namespace :customers do
     resources :rooms
-    resources :customers
+    resources :customers, only: [:edit, :show, :index, :update, :create]
+     put "/customers/:id/hide" => "customers#hide", as: 'customers_hide'
     get 'homes/about' => "homes#about"
     get 'homes/biography'=> "homes#biography"
     get 'homes/top'=> "homes#top"
-    get ':id/unsubscribe' => "homes#unsubscribe", as: "unsubscribe"
+    get 'category/:id' => "homes#category"
+    get 'homes/top_second' => "homes#top_second"
+    get 'homes/top_third' => "homes#top_third"
     resources :movies, only: [:index, :show]
     resources :topics, only: [:index, :show]
     resources :musics, only: [:show, :index] do
-    resource :favorites, only: [:create, :destroy]
+      resources :comments
+      resource :favorites, only: [:create, :destroy]
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

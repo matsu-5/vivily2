@@ -32,3 +32,4 @@ $(document).on("turbolinks:load", function(){
         return false;
     });
 });
+

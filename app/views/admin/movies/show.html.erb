@@ -9,6 +9,7 @@
               <%= video_tag @movie.movie.to_s, loop: false, controls: true, :playsinline => 'false', autoplay: true, size: "300×150", class: "content embed-responsive-video" %>
            </div>
             <div class="action">
+              <%= link_to "Edit", edit_admin_movie_path(@movie), class:"btn-sm btn-dark"%>
               <%= link_to "Destroy", admin_movie_path(@movie),class:"btn-sm btn-danger", method: :delete, "data-confirm" => "Are you sure?" %>
             </div>
          </div>

@@ -4,6 +4,7 @@ class Admin::MoviesController < ApplicationController
   end
 
   def edit
+    @movie = Movie.find(params[:id])
   end
 
   def show
@@ -20,6 +21,13 @@ class Admin::MoviesController < ApplicationController
   end
 
   def update
+     @movie = Movie.find(params[:id])
+    if @movie.update(movie_params)
+        redirect_to admin_movie_path
+    else
+        render :edit
+    end
+    flash[:success] = 'Wear was successfully updated.'
   end
 
   def destroy

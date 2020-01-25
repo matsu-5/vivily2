@@ -1,5 +1,6 @@
 class Customers::CustomersController < ApplicationController
   def edit
+  	@customer = Customer.find(params[:id])
   end
 
   def favorites
@@ -30,6 +31,21 @@ class Customers::CustomersController < ApplicationController
   	@customers = Customer.all
   end
 
+  def update
+  	@customer = Customer.find(params[:id])
+    @customer.update(customer_params)
+    redirect_to edit_customers_customer_path(@customer)
+  end
+
   def hide
+  	@customer = Customer.find(params[:id])
+    @customer.update(is_deleted: true)
+    reset_session
+    flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
+    redirect_to root_path
+  end
+
+  def customer_params
+    params.require(:customer).permit(:last_name,:first_name,:last_name_kana,:first_name_kana,:postal_code,:address,:phone_number,:email)
   end
 end

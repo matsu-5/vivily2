@@ -1,2 +1,24 @@
-<h1>Customer::Discs#index</h1>
-<p>Find me in app/views/customer/discs/index.html.erb</p>
+<div class="top_image">
+  <div class="content">
+
+<% @categories.each do |category| %>
+	<%= link_to "/customers/category/#{category.id}" do %>
+				 			<h3 style="color: black; font-size: 15px; "><%= category.name %>(<%= category.discs.count %>)</h3>
+				 		 <% end %>
+				 		 <% end %>
+    <div class="container">
+	  <div class="row">
+		<div class="col-md-9 col-md-offset-0">
+	       <h2 class="new-disc">Discography</h2>
+		   <% @disc.each do |disc| %>
+		     <image class="example_image">
+		  	     <%= link_to customers_disc_path(disc) do %>
+			     <%= attachment_image_tag disc, :image, size: "200x200" %>
+			     <% end %>
+		     </image>
+		   <% end %>
+	    </div>
+	  </div>
+    </div>
+  </div>
+</div>

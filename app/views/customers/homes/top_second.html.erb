@@ -1,0 +1,44 @@
+  <div class="top_image">
+    <div class="content">
+     <div class="container">
+        <div class="row">
+          <div class="col-md-9 col-md-offset-0">
+          <h1 class="new-information">News</h1>
+            <% @information.each do |information| %>
+              <div class="example">
+                <p><%= information.created_at.strftime('%Y/%m/%d') %></p><br>
+                <button type="button" class="btn btn-light">
+                  <%= link_to customers_information_path(information) do %>
+                  <%= information.title %>
+                  <% end %>
+                </button>
+                </div>
+                <hr>
+            <% end %>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-9 col-md-offset-0">
+          <h1 class="new-live">Live</h1>
+            <% @live.each do |live| %>
+              <div class="example">
+                <%= live.created_at.strftime('%Y/%m/%d') %><br>
+                <button type="button" class="btn btn-light">
+                <%= link_to customers_life_path(live) do %>
+                <%= live.title %>
+                <% end %>
+              </button>
+              </div>
+                <hr>
+            <% end %>
+          </div>
+          <div class="col-md-9 col-md-offset-0">
+		  <h2 class="new-video">Video</h2>
+          <% @video.each do |video| %>
+            <div class = "movie">
+              <%= video_tag video.video.to_s, loop: false, controls: true, :playsinline => 'false', autoplay: false, size: "300×150", class: "content embed-responsive-video" %>
+            </div>
+          <% end %>
+        </div>
+    </div>
+</div>
