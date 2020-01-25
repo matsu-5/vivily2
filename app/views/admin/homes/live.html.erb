@@ -1,10 +1,21 @@
-<%= link_to 'live', new_admin_life_path, remote: true, class: "btn btn-lg, btn-primary" %>
-    <div id="live-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-	     <div class="post_index_m modal-content">
-	   </div>
-	</div>
-  </div>
 
-   <div id="tr">
+<%= link_to 'live', new_admin_life_path, class: "btn btn-lg, btn-primary new-button" %>
+
+<div class="container">
+        <div class="row">
+          <div class="col-md-9 col-md-offset-0">
+          <h1 class="new-live">live</h1>
+            <% @live.each do |live| %>
+              <div class="example">
+                <%= live.created_at.strftime('%Y/%m/%d') %><br>
+                <button type="button" class="btn btn-light">
+                <%= link_to admin_life_path(live) do %>
+                <%= live.title %>
+                <% end %>
+              </button>
+              </div>
+                <hr>
+            <% end %>
+          </div>
+      </div>
   </div>

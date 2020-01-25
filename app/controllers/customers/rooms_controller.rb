@@ -26,7 +26,6 @@ class Customers::RoomsController < ApplicationController
     @room = Room.create(:name => "DM")
     @entry1 = Entry.create(:room_id => @room.id, :customer_id => current_customer.id)
     @entry2 = Entry.create(params.require(:room).permit(:customer_id).merge(:room_id => @room.id))
-    binding.pry
     redirect_to customers_room_path(@room.id)
   end
 end

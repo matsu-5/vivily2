@@ -4,36 +4,42 @@ class Admin::TopicsController < ApplicationController
   end
 
   def edit
+    @topic = Topic.find(params[:id])
   end
 
   def show
+    @topic = Topic.find(params[:id])
   end
 
   def create
   	@topic = Topic.new(topic_params)
 
-  	respond_to do |format|
   		if @topic.save
-  	    format.html { redirect_to @topic, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @topic }
-        format.js { @status = "success" }
+  	    redirect_to admin_homes_topic_path
       else
-      	format.html { render :new }
-        format.json { render json: @topic.errors, status: :unprocessable_entity }
-        # 追加
-        format.js { @status = "fail" }
+        render :new
       end
-    end
   end
 
   def update
+    @topic = Topic.find(params[:id])
+    if @topic.update(topic_params)
+    redirect_to admin_homes_topic_path
+    else
+      render :edit
+    end
   end
 
-  def hide
+  def destroy
+    def destroy
+      topic = Topic.find(params[:id])
+      topic.destroy
+      redirect_to admin_homes_topic_path
+    end
   end
 
   private
     def topic_params
-      params.require(:topic).permit(:title, :details, :image)
+      params.require(:topic).permit(:title, :details)
     end
-end
+  end

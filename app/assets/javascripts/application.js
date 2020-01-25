@@ -13,8 +13,22 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
 //= require jquery
 //= require jquery_ujs
+//= require popper
 //= require bootstrap-sprockets
+//= require summernote/summernote-bs4.min
+//= require summernote-init
 //= require cocoon
+//= require_tree .
+
+$(document).on("turbolinks:load", function(){
+    $('.js-modal-open').on('click',function(){
+        $('.js-modal').fadeIn();
+        return false;
+    });
+    $('.js-modal-close').on('click',function(){
+        $('.js-modal').fadeOut();
+        return false;
+    });
+});

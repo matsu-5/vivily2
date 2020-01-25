@@ -1,6 +1,0 @@
-<% if @status == 'success' %>
-<%  elsif @status == 'fail' %>
-    alert('error!');
-<% end %>
-$("#topic-modal").modal("hide");
- $("#tr").append("<%= j(render('topic_create', topic: @topic)) %>");

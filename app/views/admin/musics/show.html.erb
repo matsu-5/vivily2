@@ -1,4 +1,18 @@
-<%= @music.name %>
-<%= @music.comment %>
-<%= attachment_image_tag @music, :image, size: "300x300" %>
-<%= audio_tag(@music.listening, :autoplay => false, :controls => true) %>
+<div class = "container">
+	<div class = "row">
+		 <div class="col-md-9 col-md-offset-0">
+		   <h1 class ="font-weight-bold">
+             <%= @music.name %>
+           </h1>
+        <image class ="music image">
+          <%= attachment_image_tag @music, :image, size: "300x300" %>
+        </image>
+           <div class = "music">
+              <%= audio_tag(@music.listening, :autoplay => false, :controls => true) %>
+           </div>
+           <div class ="comment">
+           	<%= @music.comment %>
+           </div>
+       </div>
+    </div>
+</div>

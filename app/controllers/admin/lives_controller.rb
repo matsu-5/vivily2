@@ -4,36 +4,40 @@ class Admin::LivesController < ApplicationController
   end
 
   def edit
+    @live = Live.find(params[:id])
   end
 
   def show
+    @live = Live.find(params[:id])
   end
 
   def create
   	@live = Live.new(live_params)
 
-  	respond_to do |format|
   		if @live.save
-  	    format.html { redirect_to @live, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @live }
-        format.js { @status = "success" }
+        redirect_to admin_homes_live_path
       else
-      	format.html { render :new }
-        format.json { render json: @live.errors, status: :unprocessable_entity }
-        # 追加
-        format.js { @status = "fail" }
-      end
-    end
+          render :new
+     end
   end
 
   def update
+     @live = Live.find(params[:id])
+    if @live.update(live_params)
+       redirect_to admin_homes_live_path
+    else
+      render :edit
+    end
   end
 
-  def hide
+  def destroy
+    live = Live.find(params[:id])
+    live.destroy
+    redirect_to admin_homes_live_path
   end
 
   private
     def live_params
-      params.require(:live).permit(:title, :details, :image)
+      params.require(:live).permit(:title, :details)
     end
 end

@@ -1,22 +1,43 @@
 
-<%= link_to 'information', new_admin_information_path, remote: true, class: "btn btn-lg, btn-primary" %>
-    <div id="information-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-	     <div class="post_index_m modal-content">
-	   </div>
-	</div>
-  </div>
+<%= link_to 'information', new_admin_information_path, class: "btn btn-lg, btn-primary new-button" %>
 
-  <div id="tr">
-  </div>
+     <div class="container">
+        <div class="row">
+          <div class="col-md-9 col-md-offset-0">
+          <h1 class="new-information">information</h1>
+            <% @information.each do |information| %>
+              <div class="example">
+                <p><%= information.created_at.strftime('%Y/%m/%d') %></p><br>
+                <button type="button" class="btn btn-light">
+                  <%= link_to admin_information_path(information) do %>
+                  <%= information.title %>
+                  <% end %>
+                </button>
+                </div>
+                <hr>
+            <% end %>
+          </div>
+      </div>
+    </div>
 
-<%= link_to 'topic', new_admin_topic_path, remote: true, class: "btn btn-lg, btn-primary" %>
-    <div id="topic-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-	     <div class="post_index_m modal-content">
-	   </div>
-	</div>
-  </div>
 
-   <div id="tr">
+<%= link_to 'topic', new_admin_topic_path, class: "btn btn-lg, btn-primary new-button" %>
+
+    <div class="container">
+        <div class="row">
+          <div class="col-md-9 col-md-offset-0">
+          <h1 class="new-topic">topic</h1>
+            <% @topics.each do |topic| %>
+              <div class="example">
+                  <p><%= topic.created_at.strftime('%Y/%m/%d') %></p><br>
+              <button type="button" class="btn btn-light">
+                <%= link_to admin_topic_path(topic) do %>
+                <%= topic.title %>
+                <% end %>
+              </button>
+               </div>
+                <hr>
+            <% end %>
+        </div>
+    </div>
   </div>

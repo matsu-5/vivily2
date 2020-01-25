@@ -22,7 +22,10 @@ end
   def update
   end
 
-  def hide
+  def destroy
+    video = Video.find(params[:id])
+    video.destroy
+    redirect_to admin_homes_movie_path
   end
 
   private

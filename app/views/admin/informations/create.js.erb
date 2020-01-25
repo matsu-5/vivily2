@@ -1,6 +1,0 @@
-<% if @status == 'success' %>
-<%  elsif @status == 'fail' %>
-    alert('error!');
-<% end %>
-$("#information-modal").modal("hide");
- $("#tr").append("<%= j(render('information_create', information: @information)) %>");

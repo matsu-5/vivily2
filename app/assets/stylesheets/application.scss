@@ -13,5 +13,136 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap-sprockets";
 @import "bootstrap";
+@import "summernote-bs4";
+
+.btn-default{
+  padding: 20px 10px;
+  margin:10px 4px;
+  color: #fff;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  display:inline-block;
+   overflow:hidden;
+/*    border:1px solid #6098FF; */
+}
+.btn-default span{
+  background:#00002E;
+  width:100%;
+  position:relative;
+  padding:10px 70px;
+   -moz-transition: all .65s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: all .65s cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-transition: all .65s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all .65s cubic-bezier(0.77, 0, 0.175, 1);
+/*   border:1px solid #6098FF;  */
+}
+.transition{
+    position: absolute;
+    top: -10%;
+    left: 0%;
+    width: 100%;
+    height: 0%;
+    background: #80ffd3;
+    z-index:-1;
+/*     -ms-transform: skewX(-50deg);
+    -webkit-transform: skewX(-50deg);
+    transform: skewX(-50deg); */
+}
+.btn-default:hover span{
+  color: #80ffd3!important;
+}
+.btn-default:hover .transition{
+  height:100%;
+  top:101%;
+  -moz-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+  -o-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+  -webkit-transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all .7s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.head_image {
+  background-image:
+    url("baba.png");
+    background-size: cover;
+    background-position: center;
+    height: 400px
+}
+.navbar {
+	display: flex;
+    padding: 0 50px;
+    margin-bottom: 0px;
+}
+.float-right {
+	display: flex;
+    padding: 0 50px;
+}
+
+header {
+	overflow-x: hidden;
+}
+.navber {
+	position: relative;
+}
+li {
+	list-style: none;
+}
+nav ul li {
+    float: left;
+    position: relative;
+    margin-left: 10px;
+}
+img {
+	padding-bottom: 10px
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.content{
+    margin: 0 auto;
+    padding: 40px;
+}
+.box{
+    background: #eee;
+    height: 200px;
+    margin-bottom: 100px;
+}
+.modal{
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.modal__bg{
+    background: rgba(0,0,0,0.8);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
+.modal__content{
+    background: #fff;
+    left: 50%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+}
+.index_content {
+	display: flex;
+}
+.index_content_text {
+	margin: 0 auto;
+}
+
+
+
+
+

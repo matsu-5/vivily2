@@ -1,2 +1,16 @@
-<%= @video.title %>
-<%= video_tag @video.video.to_s, loop: false, controls: true, :playsinline => 'false', autoplay: true, size: "300×150", class: "content embed-responsive-video" %>
+<div class = "container">
+	<div class = "row">
+	  <div class="col-md-9 col-md-offset-0">
+		 	<h1 class="new-live">Movie</h1>
+		      <h1 class ="font-weight-bold">
+                <%= @video.title %>
+              </h1>
+        <div class = "movie">
+          <%= video_tag @video.video.to_s, loop: false, controls: true, :playsinline => 'false', autoplay: true, size: "300×150", class: "content embed-responsive-video" %>
+        </div>
+        <div class="action">
+          <%= link_to "Destroy", admin_video_path(@video),class:"btn-sm btn-danger", method: :delete, "data-confirm" => "Are you sure?" %>
+        </div>
+       </div>
+    </div>
+</div>

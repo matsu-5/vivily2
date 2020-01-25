@@ -22,7 +22,10 @@ class Admin::MoviesController < ApplicationController
   def update
   end
 
-  def hide
+  def destroy
+    movie = Movie.find(params[:id])
+    movie.destroy
+    redirect_to admin_homes_movie_path
   end
 
   private

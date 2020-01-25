@@ -1,5 +1,6 @@
 class Admin::DiscsController < ApplicationController
   def new
+    @categories = Category.all
   	@disc = Disc.new
   	@disc.disks.build
   	 @disc.disks.each do |disks|
@@ -31,6 +32,6 @@ class Admin::DiscsController < ApplicationController
 
   private
   def disc_params
-  	params.require(:disc).permit(:image, :name, :category, :price, :release_date, :is_deleted, disks_attributes: [:id, :_destroy, :disk_order, songs_attributes: [:id, :name, :song_order, :_destroy]])
+  	params.require(:disc).permit(:image, :name, :category_id, :price, :release_date, :is_deleted, disks_attributes: [:id, :_destroy, :disk_order, songs_attributes: [:id, :name, :song_order, :_destroy]])
   end
 end
