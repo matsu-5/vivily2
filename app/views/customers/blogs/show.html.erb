@@ -11,10 +11,6 @@
                 <hr>
                 <p><%= @blog.details.html_safe %></p>
               </div>
-              <div class="action">
-                <%= link_to "Edit", edit_admin_blog_path(@blog), class:"btn-sm btn-dark"%>
-                <%= link_to "Destroy", admin_blog_path(@blog),class:"btn-sm btn-danger", method: :delete, "data-confirm" => "Are you sure?" %>
-              </div>
               <hr>
           </div>
       </div>

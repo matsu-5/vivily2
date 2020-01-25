@@ -1,8 +1,6 @@
 <div class="top_image">
   <div class="content">
-<%= link_to 'blog', new_admin_blog_path, class: "btn btn-lg, btn-primary new-button" %>
-
-<div class="container">
+    <div class="container">
         <div class="row">
           <div class="col-md-9 col-md-offset-0">
           <h1 class="new-live">Blog</h1>
@@ -10,7 +8,7 @@
               <div class="example">
                 <%= blog.created_at.strftime('%Y/%m/%d') %><br>
                 <button type="button" class="btn btn-light">
-                <%= link_to admin_blog_path(blog) do %>
+                <%= link_to customers_blog_path(blog) do %>
                 <%= blog.title %>
                 <% end %>
               </button>
@@ -18,7 +16,8 @@
                 <hr>
             <% end %>
           </div>
-      </div>
+        </div>
+    </div>
   </div>
 </div>
-</div>
+

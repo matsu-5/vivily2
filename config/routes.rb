@@ -49,6 +49,7 @@ Rails.application.routes.draw do
     resources :musics
     resources :videos
     resources :movies
+    resources :blogs
   end
   namespace :customers do
     resources :discs, only: [:index, :show]
@@ -72,6 +73,9 @@ Rails.application.routes.draw do
     get 'homes/top_third' => "homes#top_third"
     resources :movies, only: [:index, :show]
     resources :topics, only: [:index, :show]
+    resources :blogs, only: [:index, :show] do
+      resource :favorites, only: [:create, :destroy]
+    end
     resources :musics, only: [:show, :index] do
       resources :comments
       resource :favorites, only: [:create, :destroy]
