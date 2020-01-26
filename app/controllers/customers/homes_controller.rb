@@ -18,6 +18,7 @@ class Customers::HomesController < ApplicationController
   	@topics = Topic.all
   	@movie = Movie.all
   	@music = Music.all
+  	@blog = Blog.all
   end
 
   def category
