@@ -3,8 +3,14 @@
     <div class="container">
 	  <div class="row">
 		<div class="col-md-9 col-md-offset-0">
-	       <h2 class="new-discs">discography</h2>
-	       <%= @category.name %>
+	       <h2 class="new-disc">discography</h2>
+	       <nav>
+               <ul class="float-left">
+      	         <li>
+	               <%= @category.name %>
+                </li>
+               </ul>
+             </nav>
 		   <% @discs.each do |disc| %>
 		     <image class="example_image">
 		  	     <%= link_to admin_disc_path(disc) do %>

@@ -1,11 +1,17 @@
 <div class="top_image">
   <div class="content">
 
-<% @categories.each do |category| %>
-	<%= link_to "/customers/category/#{category.id}" do %>
-				 			<h3 style="color: black; font-size: 15px; "><%= category.name %>(<%= category.discs.count %>)</h3>
-				 		 <% end %>
-				 		 <% end %>
+<nav>
+      <ul class="float-right">
+      	<li>
+          <% @categories.each do |category| %>
+            <%= link_to "/customers/category/#{category.id}" do %>
+	        <%= category.name %>(<%= category.discs.count %>)
+            <% end %>
+          <% end %>
+        </li>
+      </ul>
+    </nav>
     <div class="container">
 	  <div class="row">
 		<div class="col-md-9 col-md-offset-0">
