@@ -3,16 +3,20 @@
     <div class="container">
       <div class ="text-color">
       <div class="row">
+        <div class="wrapper">
         <div class="col-md-9 col-md-offset-0">
           <h2 class="new-movie">Movie</h2>
         <% @movie.each do |movie| %>
+        <span class="fadeInUp">
             <image class="img-fluid">
             	<%= link_to customers_movie_path(movie) do %>
 			    <%= attachment_image_tag movie, :image, size: "200x200" %>
 			    <% end %>
-			</image>
+			     </image>
+         </span>
         <% end %>
-      </div>
+        </div>
+         </div>
         </div>
       </div>
     </div>
