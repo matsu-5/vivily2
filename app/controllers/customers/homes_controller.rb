@@ -15,10 +15,9 @@ class Customers::HomesController < ApplicationController
   end
 
   def top_third
-  	@topics = Topic.all
-  	@movie = Movie.all
-  	@music = Music.all
-  	@blog = Blog.all
+  	@topics = Topic.all.order(created_at: :desc).limit(3)
+  	@movie = Movie.all.order(created_at: :desc).limit(1)
+  	@blog = Blog.all.order(created_at: :desc).limit(3)
   end
 
   def category

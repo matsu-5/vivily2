@@ -1,8 +1,8 @@
 <div class="top_image">
   <div class="content">
-<%= link_to 'blog', new_admin_blog_path, class: "btn btn-lg, btn-primary new-button" %>
+    <%= link_to 'New Blog', new_admin_blog_path, class: "btn-circle-border-double-second" %>
 
-<div class="container">
+    <div class="container">
         <div class="row">
           <div class="col-md-9 col-md-offset-0">
           <h1 class="new-live">Blog</h1>
@@ -17,8 +17,11 @@
               </div>
                 <hr>
             <% end %>
+            <div class = "col-md-9 col-md-offset-5">
+              <%= paginate @blog, class: "paginate" %>
+            </div>
           </div>
-      </div>
+        </div>
+    </div>
   </div>
-</div>
 </div>

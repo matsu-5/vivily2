@@ -1,0 +1,2 @@
+module Customers::BlogFavoritesHelper
+end

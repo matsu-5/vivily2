@@ -1,4 +1,10 @@
-<h3>ユーザ一覧</h3>
-<% @customers.each do |customer| %>
-    <%= link_to "ユーザ名：#{customer.last_name} #{customer.first_name}", customers_customer_path(customer.id) %>
-<% end %>
+<div class ="second_image">
+  <div class="content">
+    <div class ="text-color">
+      <h3>ユーザ一覧</h3>
+        <% @customers.each do |customer| %>
+          <%= link_to "ユーザ名：#{customer.last_name} #{customer.first_name}", customers_customer_path(customer.id) %>
+        <% end %>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 class Admin::BlogsController < ApplicationController
   def index
   	@blog = Blog.all
+    @blog = Blog.page(params[:page]).per(14)
   end
 
   def show
@@ -27,7 +28,7 @@ class Admin::BlogsController < ApplicationController
   def update
     @blog = Blog.find(params[:id])
     if @blog.update(blog_params)
-       redirect_to admin_blogs_path
+       redirect_to admin_blog_path
     else
       render :edit
     end

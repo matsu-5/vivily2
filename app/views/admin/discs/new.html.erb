@@ -1,9 +1,11 @@
-<section class="container clearfix">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2 new-container">
-			<h1 class="text-center">New Disc</h1>
-			<hr>
-			<div class="row">
+<div class="top_image">
+  <section class="container clearfix">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 new-container">
+        <h1 class="new-topic text-center">New Discography</h1>
+          <hr>
+          <div class="col-md-9 col-md-offset-2">
+            <div class="row">
 				<%= form_for(@disc, url: admin_discs_path) do |f| %>
 						<%= f.label :シングルアルバム名 %><br>
 						  <%= f.text_field :name, class:"form-control", placeholder: "シングル/アルバム名" %>
@@ -30,4 +32,6 @@
 			</div>
 		</div>
 	</div>
+</div>
 </section>
+</div>

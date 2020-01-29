@@ -1,4 +1,6 @@
-<div class="container">
+<div class="top_image">
+    <div class="content">
+      <div class="container">
         <div class="row">
           <h1 class="new-topic">topic</h1>
               <div class="example">
@@ -10,9 +12,11 @@
                 <p><%= @topic.details.html_safe %></p>
               </div>
               <div class="action">
-                <%= link_to "Edit", edit_admin_topic_path(@topic), class:"btn-sm btn-dark"%>
-                <%= link_to "Destroy", admin_topic_path(@topic),class:"btn-sm btn-danger", method: :delete, "data-confirm" => "Are you sure?" %>
+                <%= link_to "Edit", edit_admin_topic_path(@topic), class: "btn-circle-border-double"%>
+                <%= link_to "Destroy", admin_topic_path(@topic), class: "btn-circle-border-double-second", method: :delete, "data-confirm" => "Are you sure?" %>
               </div>
               <hr>
           </div>
       </div>
+    </div>
+  </div>

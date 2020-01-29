@@ -1,5 +1,8 @@
-<div class="container">
-	<div class="row">
+<div class ="second_image">
+  <div class="content">
+    <div class="container">
+      <div class ="text-color">
+	  <div class="row">
 		<div class="col-8 offset-2 chat_room" style="background-color: #2c3e50;">
 			<% @entries.each do |e| %>
 				<% current_customer == e.customer ? @class = "current_customer" : @class = ""  %>
@@ -19,5 +22,8 @@
 			  <input type="text" id="chat-input" data-behavior="room_speaker" class="form-control">
 			</form>
 		</div>
+	  </div>
 	</div>
+  </div>
+</div>
 </div>

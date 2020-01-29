@@ -24,7 +24,7 @@ class Admin::LivesController < ApplicationController
   def update
      @live = Live.find(params[:id])
     if @live.update(live_params)
-       redirect_to admin_homes_live_path
+       redirect_to admin_life_path
     else
       render :edit
     end

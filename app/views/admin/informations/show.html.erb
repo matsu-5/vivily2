@@ -1,3 +1,5 @@
+<div class="top_image">
+    <div class="content">
      <div class="container">
         <div class="row">
           <h1 class="new-information">information</h1>
@@ -9,10 +11,12 @@
                 <hr>
                 <p><%= @information.details.html_safe %></p>
               </div>
-              <div class="action">
-                <%= link_to "Edit", edit_admin_information_path(@information), class:"btn-sm btn-dark"%>
-                <%= link_to "Destroy", admin_information_path(@information),class:"btn-sm btn-danger", method: :delete, "data-confirm" => "Are you sure?" %>
+              <div class="new-actions">
+                <%= link_to "Edit", edit_admin_information_path(@information), class: "btn-circle-border-double"%>
+                <%= link_to "Destroy", admin_information_path(@information), class: "btn-circle-border-double-second", method: :delete, "data-confirm" => "Are you sure?" %>
               </div>
               <hr>
           </div>
       </div>
+    </div>
+</div>

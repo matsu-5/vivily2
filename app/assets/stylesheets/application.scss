@@ -30,9 +30,24 @@
     height: 200px
 }
 
+.head_image2 {
+    background-image:
+    url("header_black.png");
+    background-size: cover;
+    background-position: center;
+    height: 200px
+}
+
 .header {
   background-image:
     url("IMG_6184.JPG");
+    background-size: cover;
+    background-position: center;
+}
+
+.header2 {
+  background-image:
+    url("header_black.png");
     background-size: cover;
     background-position: center;
 }
@@ -42,7 +57,15 @@
     url("IMG_6183.JPG");
     background-size: cover;
     background-position: center;
-    height: 1280px
+    height: 1900px
+}
+
+.second_image {
+    background-image:
+    url("IMG_6194.JPG");
+    background-size: cover;
+    background-position: center;
+    height: 2200px
 }
 
 .logo_image{
@@ -54,8 +77,18 @@
     height: 120px;
     float: left;
     position: relative;
-    margin-left: 900px;
-    margin-right: 900px;
+    margin-top: 50px
+}
+
+.logo_image2{
+    background-image:
+    url("rogo_black.png");
+    background-size: cover;
+    background-position: center;
+    width: 200px;
+    height: 120px;
+    float: left;
+    position: relative;
     margin-top: 50px
 }
 
@@ -63,7 +96,7 @@
   font-family: 'Open Sans', sans-serif;
   color: #000000;
   margin: 40px auto;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(0,0,255,0);
   width: 100%;
   max-width: 960px;
   border-radius: 5px;
@@ -179,3 +212,121 @@ img {
 	font-family: 'Just Another Hand', cursive;
 	font-size: 80px
 }
+
+.new-blog{
+    font-family: 'Just Another Hand', cursive;
+    font-size: 80px
+}
+.new-biography{
+    font-family: 'Just Another Hand', cursive;
+    font-size: 80px
+}
+
+.new-actions{
+    margin-top: 20px;
+}
+
+.back{
+    margin-top: 20px;
+    font-family: 'Just Another Hand', cursive;
+    font-size: 40px
+}
+
+.btn-circle-border-double {
+  display: inline-block;
+  text-decoration: none;
+  color: #668ad8;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  border: double 4px #668ad8;
+  text-align: center;
+  overflow: hidden;
+  transition: .6s;
+  font-family: 'Just Another Hand', cursive;
+  font-size: 30px
+}
+
+.btn-circle-border-double:hover {
+  -webkit-transform: rotateY(360deg);
+  transform: rotateY(360deg);
+}
+.btn-circle-border-double {
+    position:fixed;
+    right: 31px;
+    bottom: 200px
+}
+
+.btn-circle-border-double-second {
+  display: inline-block;
+  text-decoration: none;
+  color: #668ad8;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  border: double 4px #668ad8;
+  text-align: center;
+  overflow: hidden;
+  transition: .6s;
+  font-family: 'Just Another Hand', cursive;
+  font-size: 30px
+}
+
+.btn-circle-border-double-second:hover {
+  -webkit-transform: rotateY(360deg);
+  transform: rotateY(360deg);
+}
+.btn-circle-border-double-second {
+    position:fixed;
+    right: 31px;
+    bottom: 70px
+}
+
+.btn-circle-border-double-third {
+  display: inline-block;
+  text-decoration: none;
+  color: #668ad8;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border-radius: 50%;
+  border: double 4px #668ad8;
+  text-align: center;
+  overflow: hidden;
+  transition: .6s;
+  font-family: 'Just Another Hand', cursive;
+  font-size: 30px
+}
+
+.btn-circle-border-double-third:hover {
+  -webkit-transform: rotateY(360deg);
+  transform: rotateY(360deg);
+}
+.btn-circle-border-double-third {
+    position:fixed;
+    right: 31px;
+    bottom: 330px
+}
+
+.text-color {
+    color: #FFFFFF;
+}
+//スクロールアニメーション
+.wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+span{
+  width: 70%;
+  margin: 0 0 100px;
+}
+
+.fadeInUp {
+  opacity : 0;
+  transform: translateY(20px);
+  transition: 1s;
+}
+//マウスオンアニメーション

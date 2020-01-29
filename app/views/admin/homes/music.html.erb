@@ -1,16 +1,52 @@
 <div class="top_image">
+  <div class="col-xs-2">
+    <div class="index_content">
+      <a class="js-modal-open btn-circle-border-double-third" href="">CD TYPE</a>
+    </div>
+      <div class="modal js-modal">
+        <div class="modal__bg js-modal-close"></div>
+          <div class="modal__content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel">New post</h5>
+              <a class="js-modal-close btn btn-dark" href="">×</a>
+            </div>
+              <%= form_for @category,url:admin_categories_path, method: :post,remote: true do |f| %>
+                <%= f.label :name %><br>
+                <%= f.text_field :name, class:"form-control", placeholder: "name" %><br>
+                <%= f.submit "create", class:"btn btn-dark" %>
+              <% end %>
+            </div>
+      </div>
+        <h2 class ="category">Category Type</h2>
+          <thead>
+	        <tr>
+	          <% @categories.each do |category| %>
+              <%= category.name%>
+                <div class="category-action">
+                  <%= link_to "Destroy", admin_category_path(category),class:"btn-sm btn-dark", method: :delete, "data-confirm" => "Are you sure?" %><br>
+                </div>
+            </tr>
+              <% end %>
+          </thead>
+  </div>
+<div class="col-xs-8">
   <div class="content">
-
-<%= link_to 'New Discography', new_admin_disc_path,class: "btn btn-lg, btn-primary new-button" %>
-<% @categories.each do |category| %>
-	<%= link_to "/admin/category/#{category.id}" do %>
-				 			<h3 style="color: black; font-size: 15px; "><%= category.name %>(<%= category.discs.count %>)</h3>
-				 		 <% end %>
-				 		 <% end %>
+    <%= link_to 'New Disc', new_admin_disc_path,class: "btn-circle-border-double" %>
     <div class="container">
 	  <div class="row">
-		<div class="col-md-9 col-md-offset-0">
-	       <h2 class="new-discs">discography</h2>
+		<div class="col-md-9 col-md-offset-2">
+			<nav>
+      <ul class="float-right">
+      	<li>
+          <% @categories.each do |category| %>
+            <%= link_to "/admin/category/#{category.id}" do %>
+	        <%= category.name %>(<%= category.discs.count %>)
+            <% end %>
+          <% end %>
+        </li>
+      </ul>
+    </nav>
+	       <h2 class="new-disc">discography</h2>
 		   <% @disc.each do |disc| %>
 		     <image class="example_image">
 		  	     <%= link_to admin_disc_path(disc) do %>
@@ -18,16 +54,19 @@
 			     <% end %>
 		     </image>
 		   <% end %>
+		   <div class = "col-md-9 col-md-offset-5">
+		     <%= paginate @disc, class: "paginate" %>
+		   </div>
 	    </div>
 	</div>
   </div>
 
-<%= link_to 'New music', new_admin_music_path,class: "btn btn-lg, btn-primary new-button" %>
+<%= link_to 'New Music', new_admin_music_path,class: "btn-circle-border-double-second" %>
 
   <div class="container">
   	<div class="row">
-  	  <div class="col-md-9 col-md-offset-0">
-		<h2 class="new-musics">music</h2>
+  	  <div class="col-md-9 col-md-offset-2">
+		<h2 class="new-music">music</h2>
 		  <% @music.each do |music| %>
 			  <image class="example_image">
 			    <%= link_to admin_music_path(music) do %>
@@ -35,33 +74,13 @@
 		        <% end %>
 		      </image>
 		   <% end %>
+		   <div class = "col-md-9 col-md-offset-5">
+		     <%= paginate @music, class: "paginate" %>
+		  </div>
       </div>
     </div>
 </div>
-
-<div class="index_content">
-  <a class="js-modal-open btn btn-dark" href="">New post</a>
-  <h2 class="index_content_text">Posts</h2>
 </div>
-  <div class="modal js-modal">
-    <div class="modal__bg js-modal-close"></div>
-      <div class="modal__content">
-        <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">New post</h5>
-        <a class="js-modal-close btn btn-dark" href="">×</a>
-      </div>
-        <%= form_for @category,url:admin_categories_path, method: :post,remote: true do |f| %>
-          <%= f.label :name %><br>
-          <%= f.text_field :name, class:"form-control", placeholder: "name" %><br>
-          <%= f.submit "create", class:"btn btn-dark" %>
-        <% end %>
-    </div>
-</div>
-
-<% @categories.each do |category| %>
-<%= category.name%>
-<%= link_to "Destroy", admin_category_path(category),class:"btn-sm btn-danger", method: :delete, "data-confirm" => "Are you sure?" %>
-<% end %>
 </div>
 </div>
 

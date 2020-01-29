@@ -1,10 +1,10 @@
 <div class="top_image">
   <div class="content">
-<%= link_to 'New Video', new_admin_video_path,class: "btn btn-lg, btn-primary" %>
+<%= link_to 'New Video', new_admin_video_path,class: "btn-circle-border-double" %>
 
 <div class="container">
 	<div class="row">
-        <div class="col-md-9 col-md-offset-0">
+        <div class="col-md-9 col-md-offset-2">
 		  <h2 class="new-video">Video</h2>
           <% @video.each do |video| %>
             <image class="img-fluid">
@@ -13,25 +13,31 @@
 			    <% end %>
 			</image>
           <% end %>
+            <div class = "col-md-9 col-md-offset-5">
+             <%= paginate @video, class: "paginate" %>
+           </div>
         </div>
     </div>
 </div>
 
-<%= link_to 'New movie', new_admin_movie_path,class: "btn btn-lg, btn-primary new-button" %>
+<%= link_to 'New movie', new_admin_movie_path,class: "btn-circle-border-double-second" %>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-9 col-md-offset-0">
-        <h2 class="new-movie">Movie</h2>
-        <% @movie.each do |movie| %>
-            <image class="img-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 col-md-offset-2">
+          <h2 class="new-movie">Movie</h2>
+            <% @movie.each do |movie| %>
+              <image class="img-fluid">
             	<%= link_to admin_movie_path(movie) do %>
 			    <%= attachment_image_tag movie, :image, size: "200x200" %>
 			    <% end %>
-			</image>
-        <% end %>
+			  </image>
+            <% end %>
+            <div class = "col-md-9 col-md-offset-5">
+              <%= paginate @movie, class: "paginate" %>
+            </div>
         </div>
+      </div>
     </div>
-</div>
-</div>
+  </div>
 </div>

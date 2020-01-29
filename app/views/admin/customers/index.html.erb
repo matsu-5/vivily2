@@ -9,7 +9,7 @@
 	<div class="col-md-12">
 	  <div ba-panel ba-panel-title="顧客一覧"ba-panel-class="with-scroll">
           <div class="panel-heading clearfix">
-          	<h3 class="panel-title">顧客一覧</h3>
+          	<h3 class="panel-title">Fans</h3>
 	  </div>
 	</div>
 	  <div class="table table-bordered table-hover table-condensed">
@@ -19,9 +19,9 @@
       	<table class="table table-striped jambo_table buik_action">
       	<thead>
 		<tr class="headings">
-			<th class="column-title">顧客名</th>
-			<th class="column-title">メールアドレス</th>
-			<th class="column-title">詳細ページへ</th>
+			<th class="column-title">Fan Name</th>
+			<th class="column-title">Email</th>
+			<th class="column-title">Date</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -30,7 +30,7 @@
 				<td class=><%= customer.last_name %>
 				<%= customer.first_name %></td>
 				<td><%= customer.email %></td>
-				<td><%= link_to "顧客詳細へ", admin_customer_path(customer) %></td>
+				<td><%= customer.created_at.strftime('%Y/%m/%d') %></td>
 			</tr>
 		<% end %>
 	</tbody>

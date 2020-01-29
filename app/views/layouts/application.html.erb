@@ -24,9 +24,11 @@
 <body>
    <% if admin_signed_in? %>
   <div class= "head_image">
-    <%= link_to customers_homes_top_second_path do %>
-    <div class="logo_image"></div>
+    <div class = "col-xs-5 col-xs-offset-5">
+      <%= link_to admin_homes_topic_path do %>
+       <div class="logo_image"></div>
     <% end %>
+    </div>
   </div>
   <div class ="header">
     <header class="navbar">
@@ -45,7 +47,7 @@
             <%= link_to 'Discography/Music', admin_homes_music_path, class: "btn-default" %>
           </li>
           <li>
-            <%= link_to 'Movie', admin_homes_movie_path, class: "btn-default" %>
+            <%= link_to 'Video/Movie', admin_homes_movie_path, class: "btn-default" %>
           </li>
           <li>
             <%= link_to "Blogs", admin_blogs_path, class: "btn-default" %>
@@ -60,23 +62,26 @@
     <p class="navbar-text navbar-right">
     </p>
   <% elsif customer_signed_in? %>
-  <div class= "head_image">
-    <%= link_to customers_homes_top_third_path do %>
-    <div class="logo_image"></div>
+  <div class= "head_image2">
+    <div class = "col-xs-5 col-xs-offset-5">
+      <%= link_to customers_homes_top_third_path do %>
+      <div class="logo_image2"></div>
     <% end %>
+    </div>
   </div>
-  <div class ="header">
+  <div class ="header2">
     <header class="navbar">
     <nav>
       <ul class="float-right">
+        <div class="">
         <li>
           <%= link_to 'My Page', edit_customers_customer_path(current_customer.id), class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
         </li>
         <li>
-          <%= link_to 'Chat', customers_customers_path(current_customer.id), class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+          <%= link_to 'Chat', customers_customers_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
         </li>
         <li>
-          <%= link_to 'Room', customers_rooms_path(current_customer.id), class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
+          <%= link_to 'Room', customers_rooms_path, class: "btn-default", style: "margin-left: 5px; margin-top: 33px;" %>
         </li>
         <li>
           <%= link_to 'About', customers_homes_about_path, class: "btn-default", style: "margin-left: 20px; margin-top: 33px;" %>
@@ -105,9 +110,11 @@
 </div>
  <% else %>
  <div class= "head_image">
-  <%= link_to customers_homes_top_second_path do %>
+  <div class = "col-xs-5 col-xs-offset-5">
+    <%= link_to customers_homes_top_second_path do %>
     <div class="logo_image"></div>
     <% end %>
+  </div>
   </div>
   <div class ="header">
     <header class="navbar">
@@ -142,7 +149,7 @@
   <% end %>
   </header>
 <%= yield %>
-<footer class="footer navbar-inverse", style="height: 80px; line-height: 80px; font-size: 20px;">
+<footer class="footer navbar-inverse", style="height: 200px; line-height: 80px; font-size: 20px;">
   <div class="container">
     <nav class="navbar">
       <ul>

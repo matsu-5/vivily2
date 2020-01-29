@@ -74,7 +74,8 @@ Rails.application.routes.draw do
     resources :movies, only: [:index, :show]
     resources :topics, only: [:index, :show]
     resources :blogs, only: [:index, :show] do
-      resource :favorites, only: [:create, :destroy]
+      resources :blog_comments
+      resource :blog_favorites, only: [:create, :destroy]
     end
     resources :musics, only: [:show, :index] do
       resources :comments

@@ -1,0 +1,9 @@
+<% blog_comments.each do |blog_comment| %>
+  <% unless blog_comment.id.nil? %>
+    <p><%= link_to "#{blog_comment.customer.first_name}さん", customers_customer_path(blog_comment.customer.id) %></p>
+    <p>コメント：<%= blog_comment.content %></p>
+    <% if blog_comment.customer == current_customer %>
+      <p><%= link_to 'コメントを削除する', customers_blog_blog_comment_path(blog_comment.blog_id, blog_comment.id), method: :delete, remote: true %></p>
+    <% end %>
+  <% end %>
+<% end %>

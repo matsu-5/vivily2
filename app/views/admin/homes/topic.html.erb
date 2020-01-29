@@ -1,5 +1,5 @@
 
-<%= link_to 'information', new_admin_information_path, class: "btn btn-lg, btn-primary new-button" %>
+<%= link_to 'New News', new_admin_information_path, class: "btn-circle-border-double" %>
 
   <div class="top_image">
     <div class="content">
@@ -18,12 +18,15 @@
                 </div>
                 <hr>
             <% end %>
+            <div class = "col-md-9 col-md-offset-5">
+              <%= paginate @information, class: "paginate" %>
+            </div>
           </div>
       </div>
     </div>
 
 
-<%= link_to 'topic', new_admin_topic_path, class: "btn btn-lg, btn-primary new-button" %>
+<%= link_to 'New Topic', new_admin_topic_path, class: "btn-circle-border-double-second" %>
 
     <div class="container">
         <div class="row">
@@ -40,6 +43,9 @@
                </div>
                 <hr>
             <% end %>
+            <div class = "col-md-9 col-md-offset-5">
+              <%= paginate @topics, class: "paginate" %>
+            </div>
         </div>
       </div>
     </div>

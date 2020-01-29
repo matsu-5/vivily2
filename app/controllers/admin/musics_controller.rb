@@ -38,6 +38,6 @@ class Admin::MusicsController < ApplicationController
 
   private
     def music_params
-      params.require(:music).permit(:name, :listening, :image)
+      params.require(:music).permit(:name, :listening, :image,:comment)
     end
 end

@@ -1,10 +1,12 @@
-<div class="show-content">
-<section class="container-fluid clearfix">
-	<h1 class="text-center">Discography</h1>
-		<div class="row">
-			<div class="col-md-8 col-sm-offset-2 show-container">
-				<div class="row clearfix">
-					<div class="col-md-6">
+<div class="top_image">
+  <div class="content">
+　　<div class="show-content">
+　　　<section class="container-fluid clearfix">
+	　　<h1 class="text-center">Discography</h1>
+		　　<div class="row">
+			　　<div class="col-md-8 col-sm-offset-2 show-container">
+				　<div class="row clearfix">
+					<div class="col-md-7">
 						<div class="item_show">
 							<div class="item_show_image">
 								<%= attachment_image_tag @disc, :image, size: "300x300", class: "center-block" %>
@@ -12,24 +14,24 @@
 						</div>
 					</div>
 
-					<div class="col-md-6">
+					<div class="col-md-5">
 						<table class="table table-striped">
 							<thead>
 								<tr>
-									<th>シングルアルバム名</th>
+									<th>Disc Name</th>
 									<th><%= @disc.name %></th>
 								</tr>
 								<tr>
-									<th>CD種別</th>
+									<th>CD TYPE</th>
 									<th><%= @disc.category.name %></th>
 								</tr>
 								<tr>
-									<th>価格(税込)</th>
+									<th>Price</th>
 									<th>¥ <%= @disc.price %>
 									</th>
 								</tr>
 								<tr>
-									<th>発売日</th>
+									<th>Launch Date</th>
 									<th><%= @disc.release_date %></th>
 								</tr>
 							</thead>
@@ -49,7 +51,15 @@
 									<% end %>
 								</p>
 							<% end %>
-							<%= link_to "Edit", edit_admin_disc_path(@disc), class:"btn-sm btn-dark"%>
-							<%= link_to "Destroy", admin_disc_path(@disc),class:"btn-sm btn-danger", method: :delete, "data-confirm" => "Are you sure?" %>
+							<%= link_to "Edit", edit_admin_disc_path(@disc), class: "btn-circle-border-double"%>
+							<%= link_to "Destroy", admin_disc_path(@disc), class: "btn-circle-border-double-second", method: :delete, "data-confirm" => "Are you sure?" %>
 						</div>
 					</div>
+				</h3>
+			</div>
+		</div>
+	</div>
+</section>
+</div>
+</div>
+</div>

@@ -23,7 +23,7 @@ class Admin::InformationsController < ApplicationController
   def update
     @information = Information.find(params[:id])
     if @information.update(information_params)
-       redirect_to admin_homes_topic_path
+       redirect_to admin_information_path
     else
       render :edit
     end

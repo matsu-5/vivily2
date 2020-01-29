@@ -24,7 +24,7 @@ class Admin::TopicsController < ApplicationController
   def update
     @topic = Topic.find(params[:id])
     if @topic.update(topic_params)
-    redirect_to admin_homes_topic_path
+    redirect_to admin_topic_path
     else
       render :edit
     end

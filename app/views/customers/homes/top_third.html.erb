@@ -1,13 +1,14 @@
-<div class="top_image">
+<div class ="second_image">
   <div class="content">
     <div class="container">
+      <div class ="text-color">
         <div class="row">
           <div class="col-md-9 col-md-offset-0">
           <h1 class="new-topic">topic</h1>
             <% @topics.each do |topic| %>
               <div class="example">
                   <p><%= topic.created_at.strftime('%Y/%m/%d') %></p><br>
-              <button type="button" class="btn btn-light">
+              <button type="button" class="btn-default">
                 <%= link_to customers_topic_path(topic) do %>
                 <%= topic.title %>
                 <% end %>
@@ -15,28 +16,46 @@
                </div>
                 <hr>
             <% end %>
+            <div class ="text-center back">
+              <%= link_to 'All Topics', customers_topics_path, class: "btn-default" %>
+            </div>
         </div>
       </div>
     </div>
+  </div>
+  <div class ="text-color">
     <div class="col-md-9 col-md-offset-0">
-          <h2 class="new-movie">Movie</h2>
-            <% @movie.each do |movie| %>
-            <image class="img-fluid">
-              <%= link_to customers_movie_path(movie) do %>
-              <%= attachment_image_tag movie, :image, size: "200x200" %>
-              <% end %>
-            </image>
+      <div class="video-content">
+        <h2 class="new-movie">Movie</h2>
+        <% @movie.each do |movie| %>
+        <div class = "movie">
+          <%= video_tag movie.movie.to_s, loop: false, controls: true, :playsinline => 'false', autoplay: false, size: "300×150", class: "content embed-responsive-video" %>
+        </div>
         <% end %>
+          <div class ="text-center back">
+            <%= link_to 'All Movie', customers_movies_path, class: "btn-default" %>
+          </div>
     </div>
-    <div class="col-md-9 col-md-offset-0">
-      <h2 class="new-music">music</h2>
-        <% @music.each do |music| %>
-        <image class="example_image">
-          <%= link_to customers_music_path(music) do %>
-          <%= attachment_image_tag music, :image, size: "200x200" %>
-            <% end %>
-          </image>
-       <% end %>
+        <div class ="text-color">
+            <div class="col-md-9 col-md-offset-0">
+              <h1 class="new-live">Blog</h1>
+                <% @blog.each do |blog| %>
+                  <div class="example">
+                    <%= blog.created_at.strftime('%Y/%m/%d') %><br>
+                    <button type="button" class="btn btn-light">
+                      <%= link_to customers_blog_path(blog) do %>
+                        <%= blog.title %>
+                      <% end %>
+                    </button>
+                  </div>
+                  <hr>
+                <% end %>
+                <div class ="text-center back">
+                  <%= link_to 'All Blogs', customers_blogs_path, class: "btn-default" %>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>

@@ -2,6 +2,7 @@
   <div class="content">
      <div class="container">
         <div class="row">
+          <div class="col-md-9 col-md-offset-2">
           <h1 class="new-blog">Blog</h1>
               <div class="example">
                 <p><%= @blog.created_at.strftime('%Y/%m/%d') %></p><br>
@@ -12,11 +13,12 @@
                 <p><%= @blog.details.html_safe %></p>
               </div>
               <div class="action">
-                <%= link_to "Edit", edit_admin_blog_path(@blog), class:"btn-sm btn-dark"%>
-                <%= link_to "Destroy", admin_blog_path(@blog),class:"btn-sm btn-danger", method: :delete, "data-confirm" => "Are you sure?" %>
+                <%= link_to "Edit", edit_admin_blog_path(@blog), class: "btn-circle-border-double"%>
+                <%= link_to "Destroy", admin_blog_path(@blog), class: "btn-circle-border-double-second", method: :delete, "data-confirm" => "Are you sure?" %>
               </div>
               <hr>
           </div>
       </div>
     </div>
   </div>
+</div>

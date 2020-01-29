@@ -1,0 +1,1 @@
+$("#blog__show_favorite_<%= @blog.id %>").html("<%= j(render partial: 'customers/blogs/show_favorite', locals: { blog: @blog}) %>");
