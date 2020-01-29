@@ -19,12 +19,12 @@
 
 .btn-default{
   background-image:
-  url(/images/IMG_6184.JPG);
+  image-url(/images/IMG_6184.JPG);
 }
 
 .head_image {
   background-image:
-  url(/images/IMG_6184.JPG);
+  image-url(/images/IMG_6184.JPG);
     background-size: cover;
     background-position: center;
     height: 200px
@@ -40,7 +40,7 @@
 
 .header {
   background-image:
-    url("IMG_6184.JPG");
+    image-url("IMG_6184.JPG");
     background-size: cover;
     background-position: center;
 }
@@ -54,7 +54,7 @@
 
 .top_image {
     background-image:
-    url(/images/IMG_6183.JPG);
+    image-url(/images/IMG_6183.JPG);
     background-size: cover;
     background-position: center;
     height: 1900px
