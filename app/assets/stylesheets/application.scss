@@ -23,6 +23,10 @@
 
 .head_image {
   background-image: image-url("IMG_6184.JPG");
+}
+
+.head_image {
+  background-image: image-url("IMG_6184.JPG");
     background-size: cover;
     background-position: center;
     height: 200px
@@ -37,7 +41,7 @@
 
 .header {
   background-image:
-    image-url("IMG_6184.JPG");
+    url("IMG_6184.JPG");
     background-size: cover;
     background-position: center;
 }
