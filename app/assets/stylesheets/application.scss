@@ -18,21 +18,18 @@
 @import url('https://fonts.googleapis.com/css?family=Just+Another+Hand&display=swap');
 
 .btn-default{
-  background-image:
-    url("IMG_6184.JPG");
+  background-image:image-url("IMG_6184.JPG");
 }
 
 .head_image {
-  background-image:
-    url("IMG_6184.JPG");
+  background-image:image-url("IMG_6184.JPG");
     background-size: cover;
     background-position: center;
     height: 200px
 }
 
 .head_image2 {
-    background-image:
-    url("header_black.png");
+    background-image:image-url("header_black.png");
     background-size: cover;
     background-position: center;
     height: 200px
@@ -40,37 +37,33 @@
 
 .header {
   background-image:
-    url("IMG_6184.JPG");
+    image-url("IMG_6184.JPG");
     background-size: cover;
     background-position: center;
 }
 
 .header2 {
-  background-image:
-    url("header_black.png");
+  background-image:image-url("header_black.png");
     background-size: cover;
     background-position: center;
 }
 
 .top_image {
-  background-image:
-    url("IMG_6183.JPG");
+  background-image:image-url("IMG_6183.JPG");
     background-size: cover;
     background-position: center;
     height: 1900px
 }
 
 .second_image {
-    background-image:
-    url("IMG_6194.JPG");
+    background-image:image-url("IMG_6194.JPG");
     background-size: cover;
     background-position: center;
     height: 2200px
 }
 
 .logo_image{
-	background-image:
-    url("vivily_logo.png");
+	background-image:image-url("vivily_logo.png");
     background-size: cover;
     background-position: center;
     width: 200px;
@@ -81,8 +74,7 @@
 }
 
 .logo_image2{
-    background-image:
-    url("rogo_black.png");
+    background-image:image-url("rogo_black.png");
     background-size: cover;
     background-position: center;
     width: 200px;
