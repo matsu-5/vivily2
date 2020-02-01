@@ -1,7 +1,7 @@
   <div class="top_image">
     <div class="content">
      <div class="container">
-        <div class="row">
+      <div class="row">
           <div class="col-md-9 col-md-offset-0">
           <h1 class="new-information">News</h1>
             <% @information.each do |information| %>
@@ -20,7 +20,7 @@
             </div>
           </div>
         </div>
-      </div>
+    <div class="row">
       <div class="col-md-9 col-md-offset-0">
       	<div class="video-content">
 		  <h2 class="new-video">Video</h2>
@@ -28,11 +28,14 @@
              <div class = "movie">
                <%= video_tag video.video.to_s, loop: false, controls: true, :playsinline => 'false', autoplay: false, size: "300×150", class: "content embed-responsive-video" %>
              </div>
+             <% end %>
             <div class ="text-center back">
               <%= link_to 'All Videos', customers_videos_path, class: "btn-default" %>
             </div>
         </div>
       </div>
+    </div>
+    <div class="row">
       <div class="col-md-9 col-md-offset-0">
           <h1 class="new-live">Live</h1>
             <% @live.each do |live| %>
@@ -45,12 +48,12 @@
               </button>
               </div>
                 <hr>
-            <% end %>
           <% end %>
             <div class ="text-center back">
               <%= link_to 'All Live', customers_lives_path, class: "btn-default" %>
             </div>
           </div>
+        </div>
     </div>
   </div>
 </div>
